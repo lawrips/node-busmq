@@ -29,8 +29,9 @@
     "delivery"
   ],
   "dependencies": {
+    "async": "^1.5.0",
     "hiredis": "0.4.1",
-    "redis": "0.12.1"
+    "redis": "https://github.com/lawrips/node_redis_ssl/tarball/enabling_ssl"
   },
   "optionalDependencies": {
     "ws": "0.8.0",
