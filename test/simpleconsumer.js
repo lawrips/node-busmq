@@ -28,7 +28,12 @@ bus.on('online', function() {
       // on receipt of a message, display it here
       // uncomment / comment the following line for quiet / noisy mode 
       if (id % 100 == 0) 
-      console.log(id + ' : ' + message);      
+      console.log(id + ' : ' + message);
+      
+      q.ack(id, function(err) {
+        // acked message
+      })
+      
     });
 
     // attach to queue
