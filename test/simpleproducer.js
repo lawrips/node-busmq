@@ -44,7 +44,15 @@ bus.on('online', function() {
   console.log('offline');
 });
 
+bus.on('error', function (err) {
+	console.log('error on busmq: ' + err);	
+});
 
+bus.on('offline', function () {
+    // the bus is offline - redis is down...
+	console.log('bus is offline');
+	console.log("bus status: " + bus.isOnline())		
+});
 
 // connect the redis instances
 bus.connect();

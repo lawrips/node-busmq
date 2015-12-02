@@ -27,7 +27,7 @@ bus.on('online', function() {
     q.on('message', function(message, id) {
       // on receipt of a message, display it here
       // uncomment / comment the following line for quiet / noisy mode 
-      if (id % 100 == 0) 
+      //if (id % 100 == 0) 
       console.log(id + ' : ' + message);
       
       q.ack(id, function(err) {
@@ -42,5 +42,15 @@ bus.on('online', function() {
     // in the future we'll persist the value as last and pass it up here
     q.consume({reliable: true, last: 0})
   });
+
+bus.on('error', function (err) {
+	console.log('error on busmq: ' + err);	
+});
+
+bus.on('offline', function () {
+    // the bus is offline - redis is down...
+	console.log('bus is offline');
+	console.log("bus status: " + bus.isOnline())		
+});
 
 bus.connect();
