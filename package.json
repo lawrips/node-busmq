@@ -29,8 +29,8 @@
     "delivery"
   ],
   "dependencies": {
-    "hiredis": "0.4.1",
-    "redis": "0.12.1"
+    "async": "^1.5.0",
+    "redis": "^2.4.2"
   },
   "optionalDependencies": {
     "ws": "0.8.0",
